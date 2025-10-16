@@ -23,34 +23,6 @@ flutter run
 
 > Nécessite Flutter stable, Android Studio/SDK, et un device ou émulateur.
 
-## 🔑 Signature & Builds
-
-### Keystore (une seule fois)
-```bash
-# Windows (PowerShell)
-keytool -genkeypair -v `
-  -keystore "$env:USERPROFILE\yamscore-release.keystore" `
-  -alias yamscore -keyalg RSA -keysize 2048 -validity 10000
-```
-
-Crée `android/key.properties` :
-```properties
-storePassword=TON_MDP_DE_KEYSTORE
-keyPassword=TON_MDP_DE_CLE
-keyAlias=yamscore
-storeFile=C:\\Users\\<toi>\\yamscore-release.keystore
-```
-
-### APK léger (tests direct)
-```bash
-flutter build apk --release --split-per-abi --tree-shake-icons
-# => build/app/outputs/flutter-apk/app-arm64-v8a-release.apk
-```
-
-### AAB (Play Store)
-```bash
-flutter build appbundle --release --tree-shake-icons
-# => build/app/outputs/bundle/release/app-release.aab
 ```
 
 ## 🧪 Captures d’écran (exemples)
@@ -61,15 +33,10 @@ flutter build appbundle --release --tree-shake-icons
 
 *(Ajoute tes images dans `/screenshots` et colle-les ici)*
 
-## 🔒 Politique de confidentialité
-Voir [`PRIVACY.md`](./PRIVACY.md).  
-> YamScore ne collecte ni ne partage aucune donnée personnelle.  
-> Toutes les informations restent sur **votre** appareil.
-
 ## 🛠️ Stack technique
 - Flutter (Material 3), Hive, fl_chart
 - Thème custom `GradientScaffold`, animations M3
 - Stockage **offline-first**
 
 ## 🧾 Licence
-© Plume d’Ours. Tous droits réservés.
+© Maxime Bory. Tous droits réservés.
